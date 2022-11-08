@@ -1,0 +1,14 @@
+# ignore all files in the folder
+x64/
+.vs/
+Debug/ 
+Project1\x64
+Project1\Debug
+
+#ignore all .sln files
+*.sln
+
+#ignore files
+Project1.vcxproj
+Project1.vcxproj.filters
+Project1.vcxproj.user
