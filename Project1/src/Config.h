@@ -42,4 +42,50 @@ const SDL_Color COLOR_VIOLET = _COLOR(0x91, 0, 0xFF);
 #define max(X, Y) (((X) > (Y)) ? (X) : (Y))
 #define min(X, Y) (((X) < (Y)) ? (X) : (Y))
 
+// for character set 
+#define FONT_PIXELS_UNKNOWN             1
+#define FONT_PIXELS_NON_PRINTABLE_CHAR  1
+#define FONT_PIXELS_PRINTABLE_CHAR      5
+#define FONT_PIXELS_LINE_COUNT          4
+
+// structs for cell and the grid 
+struct Cell
+{
+    // Rect dimensions and color
+    SDL_Rect rect;
+    SDL_Color rect_color;
+
+    // Border dimensions and color
+    SDL_Rect border;
+    SDL_Color border_color;
+};
+typedef struct Cell Cell;
+
+struct Grid
+{
+    // x, y, width, height
+    SDL_Rect rect;
+
+    // Grid background color
+    SDL_Color background_color;
+
+    // Grid border thickness and color
+    unsigned int border;
+    SDL_Color border_color;
+
+    // Number of cells over the x axis
+    int x_cells;
+    // Number of cells over the y axis
+    int y_cells;
+
+    // Cells boder thickness and color
+    unsigned int cells_border;
+    SDL_Color cells_border_color;
+
+    // Matrix of Cells
+    Cell cells[GRID_MAX_X_CELLS][GRID_MAX_Y_CELLS];
+};
+typedef struct Grid Grid;
+
+
 #endif // !CONFIG_H
