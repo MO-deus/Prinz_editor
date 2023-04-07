@@ -1,4 +1,6 @@
 
+// Configure file for editor
+
 #ifndef CONFIG_H
 #define CONFIG_H
 
